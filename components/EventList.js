@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { FlatList } from 'react-native';
+import { FlatList, ScrollView } from 'react-native';
 import {Text, View } from 'native-base';
 import actions from '../actions/index';
 import EventItem from './EventItem';
@@ -14,7 +14,7 @@ class EventList extends React.Component {
 
 	render() {
 		return (
-			<View>
+			<ScrollView>
 				<Text style={{
 					fontSize: 25,
 					letterSpacing: 1,
@@ -34,7 +34,7 @@ class EventList extends React.Component {
 					renderItem={EventItem}
 					keyExtractor={item => item.id}
 				/>
-			</View>
+			</ScrollView>
 		);
 	}
 }
